@@ -1,0 +1,29 @@
+syntax = "proto3";
+package usp;
+
+// Simplified USP Message definitions.  For brevity only a subset of messages
+// (Get and Set) are included.  To add additional messages refer to the USP
+// specification and complete the protobuf definitions accordingly.
+
+message Get {
+  // List of parameter paths to retrieve.  Paths may be absolute or relative.
+  repeated string param_paths = 1;
+}
+
+message Set {
+  message ParamSetting {
+    string param = 1;
+    string value = 2;
+  }
+  repeated ParamSetting param_settings = 1;
+}
+
+// Envelope for any supported USP message.  Each field in the oneof corresponds
+// to a different USP operation.  Additional operations (Add, Delete, Operate,
+// etc.) can be added later.
+message Message {
+  oneof body {
+    Get get = 1;
+    Set set = 2;
+  }
+}

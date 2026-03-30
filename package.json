@@ -1,0 +1,29 @@
+{
+  "name": "usp-controller-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "generate": "prisma generate",
+    "migrate": "prisma migrate deploy"
+  },
+  "dependencies": {
+    "next": "13.5.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "mqtt": "^5.2.0",
+    "protobufjs": "^7.2.5",
+    "@prisma/client": "^5.4.0",
+    "uuid": "^9.0.1",
+    "next-auth": "^4.24.6"
+  },
+  "devDependencies": {
+    "prisma": "^5.4.0",
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.31",
+    "@types/uuid": "^9.0.2"
+  }
+}

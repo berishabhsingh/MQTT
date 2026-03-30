@@ -1,0 +1,14 @@
+syntax = "proto3";
+package usp;
+
+// Simplified USP Record definition used by the dashboard.  A real implementation
+// should adopt the full specification from Broadband Forum.
+
+message Record {
+  // Destination Endpoint Identifier
+  string to_id = 1;
+  // Source Endpoint Identifier
+  string from_id = 2;
+  // Encoded USP Message (see usp-msg.proto)
+  bytes payload = 3;
+}
