@@ -1,0 +1,41 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b1020;
+  --panel: #121933;
+  --muted: #8fa2c8;
+  --text: #ecf3ff;
+  --accent: #61dafb;
+  --good: #43d17c;
+  --bad: #ff6b6b;
+  --border: #263153;
+}
+* { box-sizing: border-box; }
+html, body, #__next { margin: 0; min-height: 100%; background: var(--bg); color: var(--text); font-family: Inter, Arial, sans-serif; }
+a { color: inherit; }
+input, button, textarea { font: inherit; }
+button { cursor: pointer; }
+.page { max-width: 1200px; margin: 0 auto; padding: 24px; }
+.grid { display: grid; grid-template-columns: 320px 1fr; gap: 20px; }
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 18px; box-shadow: 0 10px 24px rgba(0,0,0,0.18); }
+.title { margin: 0 0 8px; font-size: 28px; }
+.subtle { color: var(--muted); }
+.stack { display: grid; gap: 12px; }
+.input, .textarea { width: 100%; background: #0e1430; color: var(--text); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; }
+.textarea { min-height: 120px; resize: vertical; }
+.row { display: flex; gap: 10px; align-items: center; }
+.btn { background: var(--accent); color: #081120; border: none; border-radius: 12px; padding: 10px 14px; font-weight: 700; }
+.btn.secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.badge { display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; padding: 6px 10px; font-size: 12px; border: 1px solid var(--border); }
+.dot { width: 8px; height: 8px; border-radius: 999px; background: var(--muted); }
+.dot.good { background: var(--good); }
+.dot.bad { background: var(--bad); }
+.list { display: grid; gap: 8px; }
+.device { padding: 12px; border: 1px solid var(--border); border-radius: 12px; background: #0e1430; }
+.device.active { outline: 2px solid var(--accent); }
+.logs { max-height: 560px; overflow: auto; font-family: ui-monospace, SFMono-Regular, monospace; font-size: 12px; white-space: pre-wrap; }
+.log { padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.log:last-child { border-bottom: none; }
+.header { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.notice { padding: 10px 12px; border-radius: 12px; background: #0e1430; border: 1px solid var(--border); }
+@media (max-width: 960px) { .grid, .two { grid-template-columns: 1fr; } }

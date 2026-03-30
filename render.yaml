@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: usp-render-dashboard
+    runtime: node
+    plan: starter
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: APP_USERNAME
+        sync: false
+      - key: APP_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: MQTT_BROKER_URL
+        sync: false
+      - key: MQTT_USERNAME
+        sync: false
+      - key: MQTT_PASSWORD
+        sync: false
+      - key: MQTT_TLS
+        value: false
+      - key: MQTT_REJECT_UNAUTHORIZED
+        value: true
+      - key: USP_CONTROLLER_ID
+        value: usp-controller-render
+      - key: DEVICE_TOPIC_PREFIX
+        value: usp
+      - key: LOG_BUFFER_SIZE
+        value: 500
+      - key: DEVICE_OFFLINE_AFTER_MS
+        value: 180000

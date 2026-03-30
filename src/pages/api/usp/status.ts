@@ -5,5 +5,5 @@ import { uspManager } from '../../../lib/uspManager';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (!requireAuth(req, res)) return;
   await uspManager.ensureConnected();
-  res.status(200).json({ logs: uspManager.getLogs() });
+  res.status(200).json(uspManager.getStatus());
 }
